@@ -1,33 +1,26 @@
 ==================================================
-  >>> THIS README IS FOR: LAB 10 - Task 2 (login.pl) <<<
+  >>> THIS README IS FOR: LAB 10 - Task 1 (shapes.pl) <<<
 ==================================================
 
-ARTI - Lab 10: Prolog Operators Part II - Task 2
+ARTI - Lab 10: Prolog Operators Part II - Task 1
 Student: Shahd Algharyafe
 Tool: SWI-Prolog
 
 File
 ----
-login.pl
+shapes.pl
 
-Task 2 - Login Page
--------------------
-Checks the username and password against a dataset of user/2 facts.
-Correct       -> "Login Successful"
-Wrong         -> "Login Unsuccessful" and the user gets 2 more attempts
-3 wrong tries -> "Sorry, you exceeded the maximum number of attempts,
-                  try again later."
-
-Dataset:
-  shahd / 1234
-  sara  / abc123
-  admin / admin
+Task 1 - Area and Perimeter
+---------------------------
+area(Shape, A) and perimeter(Shape, P) for:
+  Square:    area = side^2               perimeter = 4 x side
+  Rectangle: area = width x height       perimeter = 2 x (width + height)
+  Triangle:  area = 1/2 x base x height  perimeter = a + b + c
 
 Run:
-  ?- login.
-  Enter username: shahd.
-  Enter password: 1234.
-  Login Successful
-
-Note: type the username and password in lowercase, each followed
-by a full stop.
+  ?- area(square(5), A).             A = 25
+  ?- perimeter(square(5), P).        P = 20
+  ?- area(rectangle(4,6), A).        A = 24
+  ?- perimeter(rectangle(4,6), P).   P = 20
+  ?- area(triangle(6,4), A).         A = 12.0
+  ?- perimeter(triangle(3,4,5), P).  P = 12
